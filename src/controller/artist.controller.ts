@@ -142,6 +142,17 @@ const getArtistById = async (req: Request, resp: Response): Promise<void> => {
         bio: true,
         img: true,
 
+        images: {
+          select: {
+            id: true,
+            url: true,
+            order: true,
+          },
+          orderBy: {
+            order: "asc",
+          },
+        },
+
         songs: {
           select: {
             id: true,
