@@ -122,11 +122,30 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
-  username: 'username',
   email: 'email',
+  username: 'username',
+  image: 'image',
   password: 'password',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
+};
+
+exports.Prisma.AccountScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  provider: 'provider',
+  providerAccountId: 'providerAccountId',
+  access_token: 'access_token',
+  refresh_token: 'refresh_token',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.SessionScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  token: 'token',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt'
 };
 
 exports.Prisma.ArtistScalarFieldEnum = {
@@ -137,6 +156,13 @@ exports.Prisma.ArtistScalarFieldEnum = {
   img: 'img',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ArtistImageScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  order: 'order',
+  artistId: 'artistId'
 };
 
 exports.Prisma.AlbumScalarFieldEnum = {
@@ -247,7 +273,10 @@ exports.PaymentMethod = exports.$Enums.PaymentMethod = {
 
 exports.Prisma.ModelName = {
   User: 'User',
+  Account: 'Account',
+  Session: 'Session',
   Artist: 'Artist',
+  ArtistImage: 'ArtistImage',
   Album: 'Album',
   Song: 'Song',
   Playlist: 'Playlist',

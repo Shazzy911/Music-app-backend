@@ -17,7 +17,7 @@ import subscriptionRoute from "./routes/subscription.route";
 import paymentRoute from "./routes/payment.route";
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 8001;
 
 /// MiddleWare...
 
@@ -35,12 +35,7 @@ app.use(
     credentials: true,
   }),
 );
-// app.use(
-//   cors({
-//     origin: process.env.ALLOWED_ORIGIN,
-//     credentials: true,
-//   })
-// );
+
 app.use(cookieParser("my_secret"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
